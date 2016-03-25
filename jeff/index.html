@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+<script>
+	function makeFractal(){
+			//making mandlebrot fractal
+			var width=400;
+			var height = 400; 
+			var xmin=-2.5;
+			var xmax=1;
+			var ymin= -1;
+			var ymax = 1;
+			var pixwidth=3.5/width; // x = -2.5
+			var pixheight=2/height;
+			var x0 = -2.5;
+			var y0 = -1; 
+			var c = document.getElementById("TheCanvas");
+			var ctx = c.getContext("2d");
+			ctx.fillStyle = "#FF0000";
+			ctx.fillRect(0,0,150,75);
+	}
+
+</script>
+<h1>Fractals!</h1>
+
+<p></p>
+
+<canvas id="TheCanvas" width="400" height="400" style="border:1px solid #000000;">
+</canvas>
+
+</body>
+</html>
