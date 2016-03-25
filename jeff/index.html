@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html>
-
-
-<body>
-<script>
-	function makeFractal(){
+    <head>
+        <script type="text/javascript">
+        function makeFractal(){
 			//making mandlebrot fractal
+			var c = document.getElementById("TheCanvas");
+			var ctx = c.getContext("2d");
 			var width=400;
 			var height = 400; 
 			var xmin=-2.5;
 			var xmax=1;
 			var ymin= -1;
 			var ymax = 1;
-			var pixwidth=3.5/width; // x = -2.5
-			var pixheight=2/height;
-			var x0 = -2.5;
-			var y0 = -1; 
-			var c = document.getElementById("TheCanvas");
-			var ctx = c.getContext("2d");
-			ctx.fillStyle = "#FF0000";
-			ctx.fillRect(0,0,150,75);
-	}
+			var iterations = 1000;
+			var pixwidth=3.5/width; 
+			// xreal = xmin + pixwidth*xscreen
+			// xscreen = (xreal-xmin)/pixwidth
+			var pixheight=2.0/height; 
+			// yreal = xmin + pixheight*yscreen
+			// yscreen = (yreal-xmin)/pixheight// 
+			for(xscreen = 0; xscreen < width; xscreen++) 
+				for(yscreen = 0; yscreen<height; yscreen++){
+					var x0 = xmin + pixwidth*xscreen;
+					var y0 = ymin + pixheight*yscreen; 
+					var x = 0;
+					var y = 0; 
+					var i =0;
+					var xtemp;
+					while (x*x + y*y < 2 && i < iterations){
+						xtemp = x*x - y*y + x0;
+						y=2*x*y+y0;
+						x=xtemp;
+						i++;
+					}
+					if(i==iterations)
+						ctx.fillStyle = "#AAAAAA";
+					else 
+						ctx.fillStyle = "#"+i.toString();
+					ctx.fillRect(xscreen,yscreen,1,1);
+
+
+					}
+			}
+        window.onload = makeFractal;
+        </script>
+    </head>
+<body onload="makeFractal()">
+<script>
+	
 
 </script>
 <h1>Fractals!</h1>
