@@ -12,7 +12,7 @@
 			var xmax=1;
 			var ymin= -1;
 			var ymax = 1;
-			var iterations = 1000;
+			var iterations = 500;
 			var pixwidth=3.5/width; 
 			// xreal = xmin + pixwidth*xscreen
 			// xscreen = (xreal-xmin)/pixwidth
@@ -27,16 +27,18 @@
 					var y = 0; 
 					var i =0;
 					var xtemp;
-					while (x*x + y*y < 2 && i < iterations){
+					while (x*x + y*y < 4 && i < iterations){
 						xtemp = x*x - y*y + x0;
 						y=2*x*y+y0;
 						x=xtemp;
 						i++;
 					}
-					if(i==iterations)
-						ctx.fillStyle = "#AAAAAA";
-					else 
-						ctx.fillStyle = "#"+i.toString();
+					if(i==iterations){
+						ctx.fillStyle = "#FFFFFF";//+(x+y).toString();
+					}
+					else {
+						ctx.fillStyle = "#FF"+i.toString();
+					}
 					ctx.fillRect(xscreen,yscreen,1,1);
 
 
