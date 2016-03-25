@@ -1,0 +1,23 @@
+.square{
+    width:100px;
+    height:100px;
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+#board {
+    display: inline-block;
+    margin-top:2%;
+}
+.invisible {
+    visibility:hidden;
+}
+.visible {
+    visibility:visible;
+}
+table {
+    background-color: #FAFAFA;
+    text-align:center;
+}
