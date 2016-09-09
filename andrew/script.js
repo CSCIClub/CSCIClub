@@ -1,15 +1,18 @@
 $(document).ready(function() {
-   $('div').mouseenter(function() {
+   $('.boxes').mouseenter(function() {
        $(this).animate({
            height: '+=10px'
        });
    });
-   $('div').mouseleave(function() {
+   $('.boxes').mouseleave(function() {
        $(this).animate({
            height: '-=10px'
        });
    });
-   $('div').click(function() {
+   $('.boxes').click(function() {
        $(this).toggle(1000);
+   });
+   $('#button1').click(function(){
+       $('#output').append('<p> More Stuff! </p>');
    });
 });
