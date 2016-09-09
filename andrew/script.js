@@ -13,6 +13,6 @@ $(document).ready(function() {
        $(this).toggle(1000);
    });
    $('#button1').click(function(){
-       $('#output').append('<p> More Stuff! </p>');
+       $('#output').append('<div class="spawned"> More Stuff! </div>');
    });
 });
