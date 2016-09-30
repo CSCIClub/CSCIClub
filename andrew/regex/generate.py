@@ -3,7 +3,7 @@ import string
 domains = ['@stcloudstate.edu', '@gmail.com', '@hotmail.com', '@aol.com', '@netzero.com', '@fbi.gov']
 file = open('testfile.html', 'w')
 
-numRecords = 100
+numRecords = 1000
 
 for i in range(numRecords):
     rand = random.random()
